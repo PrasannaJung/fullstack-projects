@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head.ejs" ) %>
+    <title>Home Page</title>
+  </head>
+  <body>
+    <%- include("./partials/nav.ejs") %> <% posts.forEach(post => { %>
+    <div>
+      <img src="<%= post.imageUrl %>" width="200" height="100" />
+      <h1><%= post.title %></h1>
+      <p><%= post.body %></p>
+      <small><%= post.createdBy.fullName %></small>
+    </div>
+    <% }) %>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head.ejs") %>
+    <title>Create Post</title>
+  </head>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="container mt-3">
+      <form action="/make" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label">Post Image</label>
+          <input
+            type="file"
+            class="form-control"
+            id="image"
+            name="postImg"
+            aria-describedby="postImage"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Post Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            aria-describedby="postTitle"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Caption</label>
+          <textarea class="form-control" id="body" name="caption"></textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
