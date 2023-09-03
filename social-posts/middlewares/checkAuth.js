@@ -14,12 +14,11 @@ async function isAuthenticated(req, res, next) {
       return res.redirect("/user/login");
     }
     req.user = payload;
-    next();
+    return next();
   } catch (e) {
     console.log(e.message);
     return res.redirect("/user/login");
   }
-  next();
 }
 
 module.exports = isAuthenticated;

@@ -30,7 +30,9 @@ app.set("view engine", "ejs");
 
 app.use("/user", userRoutes);
 
+app.use(isAuthenticated);
+
+app.use("/profile", profileRoutes);
 app.use(postRoutes);
-app.use("/user", profileRoutes);
 
 app.listen(PORT, console.log(`Server starter at port: ${PORT}`));
